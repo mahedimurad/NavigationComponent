@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment android:id="@+id/homeFragment"
+        android:name="com.sarwar.navigationcomponentsample.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home"
+        >
+        <action
+            android:id="@+id/action_homeFragment_to_studyFragment"
+            app:destination="@id/studyFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            />
+        <action
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            android:id="@+id/action_homeFragment_to_examFragment"
+            app:destination="@id/examFragment" />
+        <action
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            android:id="@+id/action_homeFragment_to_libraryFragment"
+            app:destination="@id/libraryFragment" />
+        <action
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            android:id="@+id/action_homeFragment_to_supportFragment"
+            app:destination="@id/supportFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/examFragment"
+        tools:layout="@layout/fragment_exam"
+        android:name="com.sarwar.navigationcomponentsample.ExamFragment"
+        android:label="Exam" >
+        <action
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            android:id="@+id/action_examFragment_to_examDetailsFragment"
+            app:destination="@id/examDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/libraryFragment"
+        tools:layout="@layout/fragment_library"
+        android:name="com.sarwar.navigationcomponentsample.LibraryFragment"
+        android:label="Library" />
+    <fragment
+        android:id="@+id/studyFragment"
+        tools:layout="@layout/fragment_study"
+        android:name="com.sarwar.navigationcomponentsample.StudyFragment"
+        android:label="Study" />
+    <fragment
+        android:id="@+id/supportFragment"
+        tools:layout="@layout/fragment_support"
+        android:name="com.sarwar.navigationcomponentsample.SupportFragment"
+        android:label="Support" />
+    <fragment
+        tools:layout="@layout/fragment_exam_details"
+        android:id="@+id/examDetailsFragment"
+        android:name="com.sarwar.navigationcomponentsample.ExamDetailsFragment"
+        android:label="Exam Details" >
+        <argument
+            android:name="scores"
+            app:argType="com.sarwar.navigationcomponentsample.Scores" />
+    </fragment>
+</navigation>
